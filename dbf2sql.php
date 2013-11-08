@@ -100,7 +100,9 @@ for($i=0; $i<$num_rec; $i++) {
         $ta[]="'".doEscape($row[$j])."'";
     }
     //insert row query
-    fwrite($h,$fi.implode(',',$ta).");\n");
+	if(!empty($row)){
+		fwrite($h,$fi.implode(',',$ta).");\n");
+	}
 }
 
 
